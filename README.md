@@ -9,13 +9,13 @@ Gather : The data is gathered from different sources. The data could be download
 Assess : After gathering data, it is assesed visually as well as programatically. The data is assesed on the basis of its quality and tidiness. Dirty(poor quality) data and untidy(messy) data are the two unwanted traits of gathered data that should be assessed properly and then cleaned.
 Clean : After assessing the gathered data and noting down all the unwanted traits, the data is cleaned programatically. Cleaning consists of three steps: Define, Code & Test.
 
-##Gather
+## Gather
 For this I had to gather three pieces of data, all three from different sources. First, I gathered the WeRateDogs Twitter archive from a csv file which was manually downloaded from a link provided. Second, I gathered the tweet image predictions data from a link programatically using the python library requests. Finally, I used Tweepy python access library for Twitter to fetch the tweet data for each tweet_id in the WeRateDogs. Using the tweepy library, I got JSON data which I wrote to a text file, gathering all the tweets JSON data in text file. Later on fetched tweet ID, retweet count, and favorite count from the text file line by line and then created a data base.
 
-##Assess
+## Assess
 After gathering all the 3 files, I stored their data into a dataframe for easier assessment and cleaning. In order to assess the data, I examined it visually and programatically using python's pandaslibrary. First, i printed out all the dataframes entirely, used the info() function to assess the datatypes, used describe() function to summarise the quantitative variables in the datasets, etc. Then i examined the dataframes more specifically by examining each variable separately and found out the following issues:-
 
-###Quality
+### Quality
 Missing and incorrect dog names extracted from text. 'a' is the most popular name which itself is not a name.
 Timestamp is in string format.
 Source not extracted properly from hyperlink tag.
@@ -25,10 +25,10 @@ Gender of dog could be extracted from text.
 Hashtags could also be extracted.
 Absurd rating values.
 Records without dog breed prediction
-###Tidiness
+### Tidiness
 The dog stage columns in twitter_archive can be arranged into a single column.
 The image predictions could be condensed to show just the most confident dog breed prediction.
 All three dataframes can be combined into one single dataframe.
 
-##Clean
+## Clean
 Cleaning process consists of three steps: Define, code & Test. First we define how to tackle the issue. Then, we code to resolve the issue and finally we test our code to see if the issues with the data have been resolved. So, in order to clean these 3 dataframes, I carried out the 3 steps for each of the issues and was finally able to achive a clean dataframe. For cleaning purposes, I used pandas's functions: cut, merge, apply, etc. The cleaned dataset was then stored into a csv file.
